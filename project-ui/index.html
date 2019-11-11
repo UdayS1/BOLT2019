@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Hackathons</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="sammy.js"></script> 
+            <script src="sammy-template.js" type="text/javascript" charset="utf-8"></script>
+        <script src="knockout-3.5.0.js" type="text/javascript"></script>
+           
+            <script src="C:/Users/usawant/node_modules/handsontable/dist/handsontable.full.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+            <!-- <link href="C:/Users/usawant/node_modules/handsontable/dist/handsontable.full.min.css" rel="stylesheet" media="screen"> -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">     
+            <link rel="stylesheet" media="screen" href="http://handsontable.com/plugins/bootstrap/handsontable.bootstrap.css">
+            <link rel="stylesheet" media="screen" href="http://handsontable.com/dist/handsontable.full.css">
+            <link rel="stylesheet" media="screen" href="project.css">
+
+    </head>
+    <body bgcolor="grey">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" id="bc1"><a href="#" id="link1">Home</a></li>
+                <li class="breadcrumb-item"><a href="#hackathons" id="link2">Hackathons</a></li>
+                <li class="breadcrumb-item" aria-current="page">Ideas</li>
+            </ol>
+        </nav>
+            
+        <div id="hackathonContainer" class="container-fluid">
+           
+                <div class="jumbotron jumbotron-fluid" id="hackathonHeader"><h1 class="display-2">Hackathons</h1></div>
+            <div id="header" class="table">
+
+            </div>
+            <center>
+                <button id="getHackathon" type="button" class="btn" data-bind="visible: HackathonList().length < 1 ,click: getData">GET HACKATHONS</button>
+            </center>
+        </div>
+       
+
+
+    <div id="ideaContainer" class="container-fluid">
+        
+        <h1 id="titleContainer" ><strong id="title"></strong></h1>
+        <div id="ideas" class="handsontable"></div><br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newIdeaModal" data-bind="visible: displayAddIdeaButton" id="addIdeaButton">ADD IDEA</button>
+    </div>
+        <!--New Idea Modal-->
+
+     <div id="newIdeaModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"> 
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h2 class="modal-title">Idea
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                      </h2>                   
+                  </div>
+                  <div class="modal-body">
+                      <form class="needs-validation" >
+                            <div class="form-group" id="ideaSummaryGroup">
+                                    <h4><label>Idea Summary:</label>
+                                        <input type="text" class="form-control" id="ideaSummary" required></span></h4>
+                                        
+                                       <!--<div class="valid-feedback">Looks good!</div>
+                                        <div class="invalid-feedback">Please provide a valid idea summary.</div>--> 
+                              </div>
+                              <div class="form-group" id="ideaDetailsGroup">
+                                    <h4><label>Idea Details:</label>
+                                        <textarea  class="form-control" rows="5" id="ideaDetails" required></textarea></h4>
+                              </div>
+                              <div class="form-group">
+                                    <h4><label>Category:</label>
+                                        <select class="form-control" id="category" required> 
+                                           <option>Domain</option>
+                                           <option>Technology</option>
+                                           <option>Corporate</option>
+                                           <option>Operations</option>
+                                           <option>Human Resources</option>
+                                           <option>Finance</option>
+                                      </select></h4>
+                                     
+                              </div>
+                              <div class="form-group" id="teamMembersGroup">
+                                    <h4><label>Team members:</label>
+                                        <input type="text" class="form-control" placeholder="Optional" id="teamMembers"/></h4>
+                              </div>
+                      </form>
+                      
+                      
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-success"  id="submitButton">Save</button>
+                  </div>
+              </div>
+          </div>
+     </div>   
+        <script src="ko.js"></script>
+    </body>
+    </html>
+<!--data-bind="visible: displayAddIdeaButton,click: addIdea"-->

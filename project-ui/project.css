@@ -1,0 +1,28 @@
+.handsontable td ,.handsontable th ,.handsontable td
+ {  height: 50px; font-weight: bold}
+
+ .handsontable th {
+  background-color: rgba(11, 145, 133, 0.993);
+    color: #FFF;
+    font-size: large;
+    
+  } 
+
+  .ht_clone_left th {
+    background-color: #999;
+  }
+
+  .handsontable td.area {
+    background-color: rgba(164, 236, 230, 0.993);
+    
+  }
+
+   .htborders wtborder{
+    background-color: #FFF
+  }
+  .jumbotron, .jumbotron-fluid{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: rgba(11, 145, 133, 0.993);
+    color: white
+  }
